@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import hotelRouter from "./routes/hotel.router.js";
 import connectDB from "./config/dbconfig.js";
 import mongoose from "mongoose";
+import hotelDataAddedToDBRouter from "./routes/dataimport.router.js";
 
 // Initialize the express app
 const app = express();
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
   res.send("Hello traveler");
 });
 
+app.use("/api/hoteldata", hotelDataAddedToDBRouter);
 app.use("/api/hotels", hotelRouter);
 
 
