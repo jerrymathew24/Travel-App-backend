@@ -7,6 +7,8 @@ import categoryDataAddedToDBRouter from "./routes/categoryimport.router.js";
 
 import hotelRouter from "./routes/hotel.router.js";
 import categoryRouter from "./routes/category.router.js";
+import singleHotelRouter from "./routes/singlehotel.router.js";
+import authRouter from "./routes/auth.router.js";
 
 // Initialize the express app
 const app = express();
@@ -25,6 +27,8 @@ app.use("/api/hoteldata", hotelDataAddedToDBRouter);
 app.use("/api/categorydata", categoryDataAddedToDBRouter);
 app.use("/api/hotels", hotelRouter);
 app.use("/api/categories", categoryRouter);
+app.use("/api/hotels", singleHotelRouter);
+app.use("/api/auth", authRouter);
 
 
 // Start the server
