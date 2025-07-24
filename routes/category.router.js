@@ -1,7 +1,7 @@
 import express from "express";
-import categoryController from "../controller/categoryController.js";
+import categoriesController from "../controller/categoriesController.js";
 const router = express.Router();
 
-router.get("/", categoryController)
+router.get("/",categoriesController )
 
 export default router;
