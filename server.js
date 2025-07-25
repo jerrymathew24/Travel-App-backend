@@ -4,6 +4,7 @@ import connectDB from "./config/dbconfig.js";
 import mongoose from "mongoose";
 import hotelDataAddedToDBRouter from "./routes/dataimport.router.js";
 import categoryDataAddedToDBRouter from "./routes/categoryimport.router.js";
+import cors from "cors"; 
 
 import hotelRouter from "./routes/hotel.router.js";
 import categoryRouter from "./routes/category.router.js";
@@ -14,6 +15,7 @@ import wishlistRouter from "./routes/wishlist.router.js";
 // Initialize the express app
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 dotenv.config();
 connectDB();
